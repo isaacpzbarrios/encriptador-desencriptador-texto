@@ -1,10 +1,10 @@
 // Definimos las reglas de encriptación
 const rules = {
-  l4a: "a",
-  p7a: "e",
-  ns1t: "i",
-  w6l: "o",
-  l1: "u",
+  ai: "a",
+  enter: "e",
+  imes: "i",
+  ober: "o",
+  ufat: "u",
 };
 
 export function decrypt(text) {

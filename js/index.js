@@ -8,7 +8,7 @@ function handleEncrypt() {
     const output = encrypt(input);
     document.getElementById("txt_decryptor").textContent = output;
     showContentBox();
-  }else{
+  } else {
     hiddenContentBox();
   }
 }
@@ -20,7 +20,7 @@ function handleDecrypt() {
     const output = decrypt(input);
     document.getElementById("txt_decryptor").textContent = output;
     showContentBox();
-  }else{
+  } else {
     hiddenContentBox();
   }
 }
@@ -39,9 +39,7 @@ function hiddenContentBox() {
 
 // Función para copiar en el portapapeles
 const copyContent = async () => {
-  const text = document.getElementById(
-    "txt_decryptor"
-  ).textContent;
+  const text = document.getElementById("txt_decryptor").textContent;
   console.log(text);
   try {
     await navigator.clipboard.writeText(text);
@@ -58,7 +56,25 @@ document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("btn_decrypt")
     .addEventListener("click", handleDecrypt);
-  document
-    .getElementById("btn_copy")
-    .addEventListener("click", copyContent);
+  document.getElementById("btn_copy").addEventListener("click", copyContent);
+
+  //Listener para cuando ingresan una mayuscula o un caracter especial
+  document.getElementById("textarea_encryptor").addEventListener("input", function () {
+    const textarea = document.getElementById("textarea_encryptor");
+    const error_message = document.getElementById("error_encryptor");
+    const value = textarea.value;
+
+    // Expresión regular para validar que solo haya letras minúsculas y sin acentos
+    const regex = /^[a-z\s]*$/;
+
+    if (regex.test(value)) {
+      //Cambia el color del mensaje de exclamación al por defectp
+      error_message.style.color = "#868E96";
+    } else {
+      //Cambia el color del mensaje de exclamación
+      error_message.style.color = "red";
+      // Elimina los caracteres no deseados para no mostrarlos
+      textarea.value = value.replace(/[^a-z\s]/g, "");
+    }
+  });
 });
