@@ -187,10 +187,17 @@
     padding: 16px;
 }
 
+.footer__text{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
 @media (max-width: 768px) {
     .container__main {
         flex-direction: column;
         justify-content: flex-start;
+        flex: 1;
         height: 90vh;
         margin-left: 3%;
         margin-right: 3%;
