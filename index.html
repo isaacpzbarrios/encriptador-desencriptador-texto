@@ -1,14 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/global-style.css">
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
-<body>
-    
 
-    <script src="./js/encriptador.js"></script>
+<body>
+    <div class="body__container">
+        <header class="header__container">
+            <img class="header__logo" src="./assets/logo-alura.svg" alt="Logo ArulaLatam">
+        </header>
+
+        <main class="container__main">
+            <section class="encryptor__container">
+                <textarea class="encryptor__textarea" name="" id="textarea_encryptor"
+                    placeholder="Ingrese el texto aquí" onresize="none"></textarea>
+
+                <p class="encryptor__exclamation"><img src="./assets/exclamation-mark.svg"
+                        alt="Signo de exclamación">Solo
+                    letras minúsculas y sin acentos</p>
+
+                <div class="encryptor__container__btn">
+                    <button class="encryptor__btn__encrypt btn" id="btn_encrypt">Encriptar</button>
+                    <button class="encryptor__btn__decrypt btn" id="btn_decrypt">Desencriptar</button>
+                </div>
+            </section>
+
+            <section class="decryptor__container">
+                <div class="decryptor__container__box">
+                    <img src="./assets/person-section.svg" alt="Muñeco">
+                    <h3 class="decryptor__title">Ningún mensaje fue encontrado</h3>
+                    <p class="decryptor__p">Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+
+                <div class="decryptor__container__msg">
+                    <p class="decryptor__msg" id="txt_decryptor">Ingresa el texto que desees encriptar o desencriptar.
+                    </p>
+
+                    <button class="decryptor__btn__copy btn" id="btn_copy">Copiar</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer__container">
+            <p class="footer__text">Desarrollado por <strong>Isaac Pérez.</strong></p>
+        </footer>
+    </div>
+    <script type="module" src="./js/index.js"></script>
 </body>
+
 </html>
